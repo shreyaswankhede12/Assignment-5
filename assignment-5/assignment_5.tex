@@ -1,0 +1,145 @@
+% Inbuilt themes in beamer
+\documentclass{beamer}
+
+% Theme choice:
+\usetheme{CambridgeUS}
+
+% Title page details: 
+\title{Assignment $4$\\ Probability and random Variables} 
+\institute{Indian Institute of Technology Hyderabad}
+\author{Shreyas Wankhede}
+\date{\today}
+\logo{\large \LaTeX{}}
+
+
+\begin{document}
+
+% Title page frame
+\begin{frame}
+\titlepage 
+\end{frame}
+
+% Remove logo from the next slides
+\logo{}
+
+
+% Outline frame
+\begin{frame}{Outline}
+    \tableofcontents
+\end{frame}
+
+
+% Lists frame
+
+\section{figure}
+\begin{frame}{figure}
+\begin{figure}
+  \includegraphics[width=3in,height=2.4in]{Figure_1.png}
+  \caption{fig-1}
+  \label{fiure-1}
+\end{figure}
+\end{frame}
+\section{Example}
+\begin{frame}{Example}
+
+\textbf{Papoulis book example 2.19}\\\vspace{5mm}
+The below example is an illustration that emphasizes that three events can be independent in pairs but not independent\\\vspace{3mm}
+Suppose that the events A,B,C of Fig-1 have the same probability.\\
+\begin{align}
+    P(A)=P(B)=P(C)=\dfrac{1}{5}\nonumber
+\end{align}
+and the intersections AB,AC,BC,ABC also have the same probability
+\begin{align}
+    p=P(AB)=P(BC)=P(AC)\nonumber
+\end{align}
+
+
+
+\end{frame}
+
+\section{Independence of events}
+\begin{frame}{Independence of events}
+ \textbf{Independence of three events:}\\
+ The events $A_1, A_2 and A_3$ are called (mutually) independent if they are independent in pairs:\\
+ \begin{align}
+     P(A_iA_j)=P(A_i)\times P(A_j)\label{eq:1}
+ \end{align}
+ and
+ \begin{align}
+     P(A_1A_2A_3)=P(A_1)\times P(A_2)\times P(A_3)\label{eq:2}
+ \end{align}
+\end{frame}
+% Blocks frame
+\section{statements}
+\begin{frame}{statements}
+   \begin{enumerate}[label=\Alph*]
+       \item 
+       if p=\dfrac{1}{25}\\\vspace{2mm} then these events are independent in pairs but they are not independent because
+    \begin{align}
+          P(ABC)\neq P(A)\times P(B)\times P(C)\nonumber
+    \end{align}
+    
+      \item
+      if p=\dfrac{1}{125}\\\vspace{2mm} then 
+      \begin{align}
+          P(ABC)=P(A)\times P(B)\times P(C)\nonumber
+      \end{align}
+      but the events are not independent because 
+      \begin{align}
+          P(AB)\neq P(A)\times P(B)\nonumber
+      \end{align}
+    
+   \end{enumerate}
+
+\end{frame} 
+
+\section{explanation}
+\begin{frame}{Explanation}
+ From the independence of the events A, B, and C it follows that: \\
+ \begin{enumerate}
+     \item 
+     Anyone of them is independent of the intersection of the other two.
+     Indeed, from \eqref{eq:1} and \eqref{eq:2} it follows that 
+     \begin{align}
+         P(A_1A_2A_3) = P(A_1)\times P(A_2)\times P(A_3) = P(A_1)\times P(A_2A_3)\label{eq:3}
+     \end{align}
+     Hence the events $A_1$ and $A_2 A_3$ are independent
+     
+     \item
+     If we replace one or more of these events with their complements, the resulting events are also independent.Indeed since,
+     \begin{align}
+         A_1A_2= A_1A_2A_3 \cup A_1A_2\overline A_3; \hspace{3mm}P(\overline A_3)=1 -P(A_3)\nonumber
+     \end{align}
+     we conclude with \eqref{eq:3} that 
+     \begin{align}
+         P(A_1A_2\overline A_3)=P(A_1A_2) -P(A_1A_2)\times P(A_3)=P(A_1)\times P(A_2)\times P(\overline A_3))\nonumber
+     \end{align}
+     
+     \item
+      Anyone of them is independent of the union of the other two. 
+
+
+    \end{enumerate}
+ 
+
+\end{frame}
+
+\begin{frame}[t]{}
+ To show that the events $A_1$ and $A_2\cup A_3$ are independent, it suffices to show that the events $A_1$ and $\overline{A_2\cup A_3}=\overline A_2\overline A_3$ are independent. This follows from 1 and 2
+
+
+\end{frame}
+
+\section{Generalization}
+\begin{frame}{Generalization}
+    Generalization: The independence of n events can be defined inductively:\\ Suppose that 
+    we have defined independence of k events for every $k < n$. We then say that the events $A_1, ... , A_n$ are independent if any $k < n$ of them are independent and 
+    \begin{align}
+        P(A_1....A_n)=P(A_1)....P(A_n)
+    \end{align}
+    This completes the definition for any n because we have already defined independence for $n=2$
+
+\end{frame}
+
+
+\end{document}
